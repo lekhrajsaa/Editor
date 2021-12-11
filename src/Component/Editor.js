@@ -165,17 +165,18 @@ var card = [
     value: 'First header',
   },
 ];
-const Pdf = e => {
-  const input = document.getElementById('p-text-editor');
-  html2canvas(input)
-    .then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF();
-      pdf.addImage(imgData, 'png', 5, 10, 190, 0);
-      pdf.save('download.pdf');
-    })
-    .catch(() => {});
-};
+// const Pdf = e => {
+//   const input = document.getElementById('p-text-editor');
+//   html2canvas(input)
+//     .then(canvas => {
+//       const imgData = canvas.toDataURL('image/png');
+//       const pdf = new jsPDF();
+//       pdf.addImage(imgData, 'png', 5, 10, 190, 0);
+
+//       pdf.save('download.pdf');
+//     })
+//     .catch(() => {});
+// };
 const Editor = ({ jdId, roleId, isEditPage, templateId, NEW }) => {
   const MINUTE_MS = 800 * 1;
   const pairsRef = useRef({});
@@ -707,7 +708,7 @@ const Editor = ({ jdId, roleId, isEditPage, templateId, NEW }) => {
                 ))}
             </div>
           </MainContainer>
-          <button onClick={Pdf}>Print</button>
+          {/* <button onClick={Pdf}>Print</button> */}
         </div>
       </div>
     </DndProvider>
